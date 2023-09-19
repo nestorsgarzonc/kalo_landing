@@ -3,4 +3,5 @@ class KaloIcons {
   static const crewLogo = 'assets/logo/crew_logo.png';
   static const rocketLogo = 'assets/logo/rocket_logo.png';
   static const searchLogo = 'assets/logo/search_logo.png';
+  static const arrow = 'assets/logo/arrow.png';
 }

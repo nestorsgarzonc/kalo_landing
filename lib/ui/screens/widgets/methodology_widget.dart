@@ -9,18 +9,18 @@ class MethodologyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
+        Text(
           '1, 2, 3 ¡ Listo !',
-          style: TextStyle(
+          style: KaloTheme.textStyle.copyWith(
             fontSize: 27,
             fontWeight: FontWeight.w700,
           ),
         ),
         const SizedBox(height: 12),
-        const Text(
+        Text(
           'Nuestro proceso de elaboración de proyectos está \nestructurado de modo en que no te tengas que preocupar',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
+          style: KaloTheme.textStyle.copyWith(fontSize: 18, fontWeight: FontWeight.w300),
         ),
         const SizedBox(height: 80),
         Stack(
@@ -73,10 +73,10 @@ class MethodologyWidget extends StatelessWidget {
                 children: [
                   Image.asset(KaloIcons.searchLogo, height: imageSize, width: imageSize),
                   const SizedBox(height: 22),
-                  const Text(
+                  Text(
                     'Identificamos\nel problema',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: KaloTheme.textStyle.copyWith(
                       fontSize: 22,
                       fontWeight: FontWeight.w600,
                       color: KaloTheme.blueColor,
@@ -93,10 +93,10 @@ class MethodologyWidget extends StatelessWidget {
                 children: [
                   Image.asset(KaloIcons.crewLogo, height: imageSize, width: 90),
                   const SizedBox(height: 22),
-                  const Text(
+                  Text(
                     'Armamos tu\nequipo tech',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: KaloTheme.textStyle.copyWith(
                       fontSize: 22,
                       fontWeight: FontWeight.w600,
                       color: KaloTheme.blueColor,
@@ -112,10 +112,10 @@ class MethodologyWidget extends StatelessWidget {
                 children: [
                   Image.asset(KaloIcons.rocketLogo, height: imageSize, width: imageSize),
                   const SizedBox(height: 22),
-                  const Text(
+                  Text(
                     '¡¡Inicia el \nproyecto!!',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: KaloTheme.textStyle.copyWith(
                       fontSize: 22,
                       fontWeight: FontWeight.w600,
                       color: KaloTheme.blueColor,

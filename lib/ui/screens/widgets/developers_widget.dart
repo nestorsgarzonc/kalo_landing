@@ -7,7 +7,7 @@ class DevelopersWidget extends StatefulWidget {
   State<DevelopersWidget> createState() => _DevelopersWidgetState();
 }
 
-class _DevelopersWidgetState extends State<DevelopersWidget> {
+class _DevelopersWidgetState extends State<DevelopersWidget> with AutomaticKeepAliveClientMixin {
   final _scrollController = ScrollController();
   Timer? _timer;
 
@@ -33,68 +33,75 @@ class _DevelopersWidgetState extends State<DevelopersWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        Positioned(
-          top: 120,
-          child: Image.asset(KaloImages.developersWave),
-        ),
-        Positioned(
-          top: 340,
-          left: 0,
-          right: 0,
-          child: SizedBox(
-            height: 60,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              controller: _scrollController,
-              children: List.generate(10, (index) => Image.asset(KaloImages.technologies)),
-            ),
+    super.build(context);
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 140),
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Positioned(
+            top: 120,
+            child: Image.asset(KaloImages.developersWave),
           ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(KaloImages.phone, height: 480),
-            ShaderMask(
-              blendMode: BlendMode.srcIn,
-              shaderCallback: (bounds) => const LinearGradient(
-                colors: [Color(0xFF00FFA3), Color(0xFF005AE4)],
-                stops: [-0.3, 1],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ).createShader(Rect.fromLTWH(0, 0, bounds.width, bounds.height)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  const SizedBox(height: 80),
-                  Text(
-                    '+5000',
-                    style: KaloTheme.textStyle.copyWith(
-                      fontSize: 120,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    textHeightBehavior: const TextHeightBehavior(
-                      applyHeightToLastDescent: false,
-                      applyHeightToFirstAscent: false,
-                    ),
-                  ),
-                  Text(
-                    'Desarrolladores en nuestra comunidad',
-                    style: KaloTheme.textStyle.copyWith(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      height: 0.1,
-                    ),
-                  ),
-                ],
+          Positioned(
+            top: 340,
+            left: 0,
+            right: 0,
+            child: SizedBox(
+              height: 60,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                controller: _scrollController,
+                children: List.generate(10, (index) => Image.asset(KaloImages.technologies)),
               ),
             ),
-          ],
-        ),
-      ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(KaloImages.phone, height: 480),
+              ShaderMask(
+                blendMode: BlendMode.srcIn,
+                shaderCallback: (bounds) => const LinearGradient(
+                  colors: [Color(0xFF00FFA3), Color(0xFF005AE4)],
+                  stops: [-0.3, 1],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ).createShader(Rect.fromLTWH(0, 0, bounds.width, bounds.height)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const SizedBox(height: 80),
+                    Text(
+                      '+5000',
+                      style: KaloTheme.textStyle.copyWith(
+                        fontSize: 120,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      textHeightBehavior: const TextHeightBehavior(
+                        applyHeightToLastDescent: false,
+                        applyHeightToFirstAscent: false,
+                      ),
+                    ),
+                    Text(
+                      'Desarrolladores en nuestra comunidad',
+                      style: KaloTheme.textStyle.copyWith(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        height: 0.1,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

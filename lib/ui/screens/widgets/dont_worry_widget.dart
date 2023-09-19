@@ -30,13 +30,13 @@ class DontWorryWidget extends StatelessWidget {
               fit: BoxFit.fitHeight,
             ),
           ),
-          const Positioned(
+          Positioned(
             top: -35,
             left: 340,
             child: ChatBubble(
               child: Text(
                 'Los programadores no me dan garantías',
-                style: TextStyle(
+                style: KaloTheme.textStyle.copyWith(
                   color: Colors.white,
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
@@ -44,7 +44,7 @@ class DontWorryWidget extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
+          Positioned(
             top: 60,
             left: 390,
             child: ChatBubble(
@@ -53,7 +53,7 @@ class DontWorryWidget extends StatelessWidget {
               height: 80,
               child: Text(
                 'Quisiera mejorar los procesos de mi empresa',
-                style: TextStyle(
+                style: KaloTheme.textStyle.copyWith(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
@@ -61,18 +61,18 @@ class DontWorryWidget extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
+          Positioned(
             top: 180,
             left: 370,
             child: ChatBubble(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(16),
                 bottomRight: Radius.circular(16),
                 bottomLeft: Radius.circular(16),
               ),
               child: Text(
                 'Nunca consigo el personal que necesito',
-                style: TextStyle(
+                style: KaloTheme.textStyle.copyWith(
                   color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
@@ -84,22 +84,22 @@ class DontWorryWidget extends StatelessWidget {
             right: 0,
             top: 50,
             width: MediaQuery.of(context).size.width * 0.25,
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   '¡No hay por qué preocuparse!',
-                  style: TextStyle(
+                  style: KaloTheme.textStyle.copyWith(
                     fontSize: 32,
                     fontWeight: FontWeight.w700,
                     color: KaloTheme.primaryColor,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   'Nosotros nos encargamos de darte la mejor experiencia con los mejores desarrolladores ',
                   textAlign: TextAlign.justify,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
+                  style: KaloTheme.textStyle.copyWith(fontSize: 18, fontWeight: FontWeight.w300),
                 ),
               ],
             ),
