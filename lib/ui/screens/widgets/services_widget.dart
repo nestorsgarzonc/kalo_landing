@@ -43,7 +43,6 @@ class ServicesWidget extends StatelessWidget {
 
 class _ImageInfo extends StatelessWidget {
   const _ImageInfo({
-    super.key,
     required this.imgPath,
     required this.title,
     this.showSeeMore = false,

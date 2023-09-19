@@ -7,20 +7,29 @@ class DevelopersWidget extends StatefulWidget {
   State<DevelopersWidget> createState() => _DevelopersWidgetState();
 }
 
-class _DevelopersWidgetState extends State<DevelopersWidget> with AutomaticKeepAliveClientMixin {
+class _DevelopersWidgetState extends State<DevelopersWidget> {
   final _scrollController = ScrollController();
   Timer? _timer;
 
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _timer = Timer.periodic(const Duration(seconds: 1), (_) {
-        _scrollController.animateTo(
-          100,
-          duration: const Duration(milliseconds: 998),
-          curve: Curves.linear,
-        );
-      });
+    //Infinite scroll
+    _timer = Timer.periodic(const Duration(milliseconds: 500), (timer) {
+      if (_scrollController.hasClients) {
+        if (_scrollController.offset >= _scrollController.position.maxScrollExtent) {
+          _scrollController.animateTo(
+            0,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.linear,
+          );
+        } else {
+          _scrollController.animateTo(
+            _scrollController.offset + 50,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.linear,
+          );
+        }
+      }
     });
     super.initState();
   }
@@ -33,7 +42,6 @@ class _DevelopersWidgetState extends State<DevelopersWidget> with AutomaticKeepA
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     return Padding(
       padding: const EdgeInsets.only(bottom: 140),
       child: Stack(
@@ -49,10 +57,24 @@ class _DevelopersWidgetState extends State<DevelopersWidget> with AutomaticKeepA
             right: 0,
             child: SizedBox(
               height: 60,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                controller: _scrollController,
-                children: List.generate(10, (index) => Image.asset(KaloImages.technologies)),
+              child: ShaderMask(
+                blendMode: BlendMode.srcATop,
+                shaderCallback: (bounds) => LinearGradient(
+                  colors: [
+                    const Color(0xFF005AE4).withOpacity(0.8),
+                    Colors.grey.withOpacity(0.9),
+                  ],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ).createShader(Rect.fromLTWH(0, 0, bounds.width, bounds.height)),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  controller: _scrollController,
+                  children: List.generate(
+                    10,
+                    (index) => Image.asset(KaloImages.technologies),
+                  ),
+                ),
               ),
             ),
           ),
@@ -101,7 +123,4 @@ class _DevelopersWidgetState extends State<DevelopersWidget> with AutomaticKeepA
       ),
     );
   }
-
-  @override
-  bool get wantKeepAlive => true;
 }

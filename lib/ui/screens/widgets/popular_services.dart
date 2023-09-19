@@ -1,5 +1,7 @@
 part of '../screens.dart';
 
+const itemCarrouselWidth = 200.0;
+
 class PopularServices extends StatefulWidget {
   const PopularServices({super.key});
 
@@ -9,7 +11,6 @@ class PopularServices extends StatefulWidget {
 
 class _PopularServicesState extends State<PopularServices> {
   final scrollController = ScrollController();
-  static const itemCarrouselWidth = 200.0;
 
   double carrouselPadding = 0;
 
@@ -64,62 +65,12 @@ class _PopularServicesState extends State<PopularServices> {
                       scrollDirection: Axis.horizontal,
                       physics: const NeverScrollableScrollPhysics(),
                       controller: scrollController,
-                      itemBuilder: (context, index) => Container(
-                        width: itemCarrouselWidth,
-                        margin: EdgeInsets.only(
-                          right: getCarrouselItemPadding(constraints.maxWidth) / 2,
-                          left: getCarrouselItemPadding(constraints.maxWidth) / 2,
-                        ),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              top: 0,
-                              left: 0,
-                              right: 0,
-                              bottom: 0,
-                              child: Image.network(
-                                'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Programming_code.jpg/800px-Programming_code.jpg',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                gradient: LinearGradient(
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter,
-                                  colors: [
-                                    Colors.black.withOpacity(0.2),
-                                    KaloTheme.primaryColor.withOpacity(0.5),
-                                  ],
-                                  stops: [0.4, 1],
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              left: 12,
-                              bottom: 12,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Bases de',
-                                    style: KaloTheme.textStyle.copyWith(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  Text(
-                                    'DATOS',
-                                    style: KaloTheme.textStyle
-                                        .copyWith(color: Colors.white, fontSize: 24),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                      itemCount: PopularServicesCard.items.length,
+                      itemBuilder: (context, index) => PopularServicesCard(
+                        margin: getCarrouselItemPadding(constraints.maxWidth),
+                        imagePath: PopularServicesCard.items[index].$1,
+                        title: PopularServicesCard.items[index].$2,
+                        subtitle: PopularServicesCard.items[index].$3,
                       ),
                     );
                   }),
@@ -141,4 +92,71 @@ class _PopularServicesState extends State<PopularServices> {
       ),
     );
   }
+}
+
+class PopularServicesCard extends StatelessWidget {
+  const PopularServicesCard({
+    super.key,
+    required this.margin,
+    required this.imagePath,
+    required this.title,
+    required this.subtitle,
+  });
+
+  final double margin;
+  final String imagePath;
+  final String title;
+  final String subtitle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: itemCarrouselWidth,
+      margin: EdgeInsets.only(right: margin / 2, left: margin / 2),
+      child: Stack(
+        children: [
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Image.asset(imagePath, fit: BoxFit.cover),
+          ),
+          Positioned(
+            left: 12,
+            bottom: 12,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: KaloTheme.textStyle
+                      .copyWith(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),
+                ),
+                Text(
+                  subtitle,
+                  style: KaloTheme.textStyle.copyWith(color: Colors.white, fontSize: 24),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  static const List<(String path, String title, String subtitle)> items = [
+    (KaloImages.carrousel0, 'Sitios', 'WEB'),
+    (KaloImages.carrousel1, 'Bases de', 'DATOS'),
+    (KaloImages.carrousel2, 'Software', 'A MEDIDA'),
+    (KaloImages.carrousel3, 'E-commerce', 'PERSONALIZADOS'),
+    (KaloImages.carrousel4, 'Aplicaciones', 'MÓVILES'),
+    (KaloImages.carrousel5, 'Integración', 'DE SISTEMAS'),
+    (KaloImages.carrousel6, 'Consultorías', 'TECNOLÓGICAS'),
+    (KaloImages.carrousel7, 'Servicios en', 'NUBE'),
+    (KaloImages.carrousel8, 'Prototipados', 'FRONT-END'),
+    (KaloImages.carrousel9, 'Mantenimiento', 'DE PÁGINAS'),
+    (KaloImages.carrousel10, 'Diseño', 'UI/UX'),
+    (KaloImages.carrousel11, 'Desarrollo', 'DE MVP\'S')
+  ];
 }
