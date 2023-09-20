@@ -130,12 +130,19 @@ class PopularServicesCard extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: KaloTheme.textStyle
-                      .copyWith(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),
+                  style: KaloTheme.textStyle.copyWith(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                    height: 1.1,
+                  ),
                 ),
                 Text(
                   subtitle,
-                  style: KaloTheme.textStyle.copyWith(color: Colors.white, fontSize: 24),
+                  style: KaloTheme.textStyle.copyWith(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
                 ),
               ],
             ),

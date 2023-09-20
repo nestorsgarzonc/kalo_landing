@@ -105,7 +105,7 @@ class IdentifyYourNeeds extends StatelessWidget {
                 ),
                 Container(
                   height: 50,
-                  width: 300,
+                  width: 320,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -119,7 +119,7 @@ class IdentifyYourNeeds extends StatelessWidget {
                   child: Text(
                     'Agenda tu consultoría ahora',
                     style: KaloTheme.textStyle.copyWith(
-                      fontSize: 22,
+                      fontSize: 20,
                       fontWeight: FontWeight.w600,
                       color: Colors.white,
                     ),
