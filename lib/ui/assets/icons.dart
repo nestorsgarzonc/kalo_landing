@@ -6,4 +6,5 @@ class KaloIcons {
   static const arrow = 'assets/logo/arrow.png';
   static const linkedin = 'assets/logo/linkedin.png';
   static const tiktok = 'assets/logo/tiktok.png';
+  static const instagram = 'assets/logo/instagram.png';
 }

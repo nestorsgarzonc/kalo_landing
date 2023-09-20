@@ -17,7 +17,7 @@ class LandingScreen extends StatelessWidget {
           DevelopersWidget(key: Key('developers_widget')),
           TrustedInUs(),
           IdentifyYourNeeds(),
-          SizedBox(height: 80),
+          SizedBox(height: 60),
           PlatformInConstruction(),
           FooterWidget(),
         ],
