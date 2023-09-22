@@ -20,9 +20,9 @@ class MethodologyWidget extends StatelessWidget {
         Text(
           'Nuestro proceso de elaboración de proyectos está \nestructurado de modo en que no te tengas que preocupar',
           textAlign: TextAlign.center,
-          style: KaloTheme.textStyle.copyWith(fontSize: 18, fontWeight: FontWeight.w300),
+          style: KaloTheme.acuminTextStyle.copyWith(fontSize: 18, fontWeight: FontWeight.w300),
         ),
-        const SizedBox(height: 80),
+        const SizedBox(height: 140),
         Stack(
           clipBehavior: Clip.none,
           children: [

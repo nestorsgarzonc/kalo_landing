@@ -34,12 +34,26 @@ class DontWorryWidget extends StatelessWidget {
             top: -35,
             left: 340,
             child: ChatBubble(
-              child: Text(
-                'Los programadores no me dan garantías',
-                style: KaloTheme.textStyle.copyWith(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Los programadores ',
+                      style: KaloTheme.textStyle.copyWith(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'no me dan garantías',
+                      style: KaloTheme.textStyle.copyWith(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -51,12 +65,34 @@ class DontWorryWidget extends StatelessWidget {
               color: KaloTheme.primaryColor,
               width: 260,
               height: 80,
-              child: Text(
-                'Quisiera mejorar los procesos de mi empresa',
-                style: KaloTheme.textStyle.copyWith(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Quisiera ',
+                      style: KaloTheme.textStyle.copyWith(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'mejorar los procesos ',
+                      style: KaloTheme.textStyle.copyWith(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'de mi empresa',
+                      style: KaloTheme.textStyle.copyWith(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -70,18 +106,32 @@ class DontWorryWidget extends StatelessWidget {
                 bottomRight: Radius.circular(16),
                 bottomLeft: Radius.circular(16),
               ),
-              child: Text(
-                'Nunca consigo el personal que necesito',
-                style: KaloTheme.textStyle.copyWith(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Nunca consigo ',
+                      style: KaloTheme.textStyle.copyWith(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'el personal que necesito',
+                      style: KaloTheme.textStyle.copyWith(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
           ),
           Positioned(
-            right: 0,
+            right: 72,
             top: 50,
             width: MediaQuery.of(context).size.width * 0.25,
             child: Column(
@@ -91,15 +141,19 @@ class DontWorryWidget extends StatelessWidget {
                   '¡No hay por qué preocuparse!',
                   style: KaloTheme.textStyle.copyWith(
                     fontSize: 32,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.bold,
                     color: KaloTheme.primaryColor,
+                    height: 1.2,
                   ),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'Nosotros nos encargamos de darte la mejor experiencia con los mejores desarrolladores ',
                   textAlign: TextAlign.justify,
-                  style: KaloTheme.textStyle.copyWith(fontSize: 18, fontWeight: FontWeight.w300),
+                  style: KaloTheme.acuminTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w300,
+                  ),
                 ),
               ],
             ),

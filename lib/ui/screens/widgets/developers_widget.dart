@@ -62,7 +62,7 @@ class _DevelopersWidgetState extends State<DevelopersWidget> {
                 shaderCallback: (bounds) => LinearGradient(
                   colors: [
                     const Color(0xFF005AE4).withOpacity(0.8),
-                    Colors.grey.withOpacity(0.9),
+                    Colors.grey.withOpacity(0.5),
                   ],
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
@@ -72,7 +72,10 @@ class _DevelopersWidgetState extends State<DevelopersWidget> {
                   controller: _scrollController,
                   children: List.generate(
                     10,
-                    (index) => Image.asset(KaloImages.technologies),
+                    (index) => Padding(
+                      padding: const EdgeInsets.only(right: 70),
+                      child: Image.asset(KaloImages.technologies),
+                    ),
                   ),
                 ),
               ),
@@ -99,7 +102,7 @@ class _DevelopersWidgetState extends State<DevelopersWidget> {
                       '+5000',
                       style: KaloTheme.textStyle.copyWith(
                         fontSize: 120,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w800,
                       ),
                       textHeightBehavior: const TextHeightBehavior(
                         applyHeightToLastDescent: false,
@@ -110,7 +113,7 @@ class _DevelopersWidgetState extends State<DevelopersWidget> {
                       'Desarrolladores en nuestra comunidad',
                       style: KaloTheme.textStyle.copyWith(
                         fontSize: 18,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w800,
                         height: 0.1,
                       ),
                     ),

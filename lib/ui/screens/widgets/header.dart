@@ -64,10 +64,13 @@ class HeaderWidget extends StatelessWidget {
                       const SizedBox(width: 20),
                       ...['Servicios', 'Empresas', 'Nuestro proceso', 'Comunidad'].map(
                         (e) => Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(14),
                           child: Text(
                             e,
-                            style: KaloTheme.textStyle.copyWith(color: Colors.white, fontSize: 16),
+                            style: KaloTheme.acuminTextStyle.copyWith(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
                           ),
                         ),
                       ),
@@ -78,27 +81,26 @@ class HeaderWidget extends StatelessWidget {
                     'La tech \nhouse que \nnecesitas',
                     style: KaloTheme.textStyle.copyWith(
                       fontSize: 67,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                      height: 1.1,
+                      fontWeight: FontWeight.w700,
+                      color: const Color.fromRGBO(255, 255, 255, 1),
+                      height: 1,
                     ),
                   ),
-                  const SizedBox(height: 28),
+                  const SizedBox(height: 16),
                   Text(
                     'Optimiza tu área tech y contrata desde un developer \nhasta equipos dedicados full time o por hora.',
-                    style: KaloTheme.textStyle.copyWith(
+                    style: KaloTheme.acuminTextStyle.copyWith(
                       fontSize: 16,
                       color: Colors.white,
-                      height: 1.1,
                     ),
                   ),
-                  const SizedBox(height: 60),
+                  const SizedBox(height: 92),
                   Row(
                     children: [
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                           backgroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
@@ -106,7 +108,7 @@ class HeaderWidget extends StatelessWidget {
                         ),
                         child: Text(
                           'Contrata ahora',
-                          style: KaloTheme.textStyle.copyWith(
+                          style: KaloTheme.acuminTextStyle.copyWith(
                             fontSize: 14,
                             fontWeight: FontWeight.w700,
                             color: KaloTheme.primaryColor,
@@ -116,7 +118,7 @@ class HeaderWidget extends StatelessWidget {
                       const SizedBox(width: 42),
                       Text(
                         'Sé un desarrollador',
-                        style: KaloTheme.textStyle.copyWith(
+                        style: KaloTheme.acuminTextStyle.copyWith(
                           fontSize: 14,
                           fontWeight: FontWeight.w700,
                           color: Colors.white,
@@ -124,7 +126,7 @@ class HeaderWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 120),
+                  const SizedBox(height: 180),
                 ],
               ),
             ],

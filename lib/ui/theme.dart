@@ -9,11 +9,13 @@ class KaloTheme {
   static final theme = ThemeData(
     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
     textTheme: GoogleFonts.poppinsTextTheme(ThemeData.light().textTheme),
-    
   );
 
   static final textStyle = GoogleFonts.poppins(
     fontSize: 18,
-    fontWeight: FontWeight.w500,
+  );
+
+  static final acuminTextStyle = GoogleFonts.roboto(
+    fontSize: 18,
   );
 }
