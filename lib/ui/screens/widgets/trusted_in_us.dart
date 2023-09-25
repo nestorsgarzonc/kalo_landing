@@ -12,7 +12,7 @@ class TrustedInUs extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           Positioned(
-            top: -110,
+            top: -80,
             child: Transform.scale(
               scaleX: -1,
               child: Image.asset(KaloImages.developersWave),
@@ -71,7 +71,7 @@ class TrustedInUs extends StatelessWidget {
                   textAlign: TextAlign.start,
                   style: KaloTheme.textStyle.copyWith(
                     fontSize: 65,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.bold,
                     height: 1.1,
                   ),
                 ),
@@ -80,7 +80,7 @@ class TrustedInUs extends StatelessWidget {
           ),
           Positioned(
             right: lateralPadding,
-            top: -80,
+            top: -100,
             child: Image.asset(
               KaloImages.companies,
               width: MediaQuery.of(context).size.width * 0.4,

@@ -19,7 +19,7 @@ class PlatformInConstruction extends StatelessWidget {
           width: MediaQuery.of(context).size.width * .75,
         ),
         Positioned(
-          top: 60,
+          top: 76,
           right: lateralPadding,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,7 +35,7 @@ class PlatformInConstruction extends StatelessWidget {
                   '¡¡Plataforma en \nconstrucción!!',
                   style: KaloTheme.textStyle.copyWith(
                     fontSize: 42,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

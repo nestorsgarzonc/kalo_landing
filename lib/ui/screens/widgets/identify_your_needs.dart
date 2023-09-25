@@ -59,7 +59,7 @@ class IdentifyYourNeeds extends StatelessWidget {
                 '¿No estás seguro de cómo avanzar?',
                 style: KaloTheme.textStyle.copyWith(
                   fontSize: 22,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),
@@ -85,7 +85,7 @@ class IdentifyYourNeeds extends StatelessWidget {
             const SizedBox(height: 30),
             Text(
               'Contamos con consultores expertos en la resolución de proyectos que se \nencargarán de guiarte en tu proceso',
-              style: KaloTheme.textStyle.copyWith(
+              style: KaloTheme.acuminTextStyle.copyWith(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
               ),
@@ -97,10 +97,10 @@ class IdentifyYourNeeds extends StatelessWidget {
               children: [
                 Positioned(
                   top: -80,
-                  right: -25,
+                  right: -60,
                   child: Image.asset(
                     KaloIcons.arrow,
-                    height: 70,
+                    height: 80,
                   ),
                 ),
                 Container(
