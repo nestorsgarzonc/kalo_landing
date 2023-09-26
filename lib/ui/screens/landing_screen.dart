@@ -5,6 +5,7 @@ class LandingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MediaQuery.of(context).size.width;
     return Scaffold(
       body: ListView(
         children: const [

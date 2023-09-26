@@ -3,10 +3,13 @@ library com.kalo.landing.screens;
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:kalo_landing/core/extensions_methods.dart';
 import 'package:kalo_landing/ui/assets/icons.dart';
 import 'package:kalo_landing/ui/assets/images.dart';
+import 'package:kalo_landing/ui/assets/videos.dart';
 import 'package:kalo_landing/ui/theme.dart';
 import 'package:kalo_landing/ui/widgets/chat_bubble.dart';
+import 'package:video_player/video_player.dart';
 
 part './landing_screen.dart';
 part './widgets/header.dart';
